@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aureum — Bespoke AI Solutions</title>
+  <meta name="description" content="Bespoke, personalised, ethical AI solutions for forward-thinking business owners. Aureum crafts intelligent systems that elevate your business.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">Aureum</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav__links" id="navLinks">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#journal">Journal</a>
+        <a href="#contact" class="nav__cta">Begin a Conversation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient"></div>
+    </div>
+    <div class="hero__content">
+      <div class="hero__label">AI Agency for the Discerning</div>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Intelligence,</span>
+        <span class="hero__title-line hero__title-line--italic">beautifully</span>
+        <span class="hero__title-line">applied.</span>
+      </h1>
+      <p class="hero__subtitle">Bespoke, personalised, ethical AI solutions<br>for forward-thinking business owners.</p>
+      <a href="#philosophy" class="hero__scroll">
+        <span>Discover</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero__aside">
+      <div class="hero__aside-number">01</div>
+      <div class="hero__aside-text">Crafting intelligent<br>systems since 2024</div>
+    </div>
+  </header>
+
+  <!-- Philosophy Section -->
+  <section class="section philosophy" id="philosophy">
+    <div class="section__grid section__grid--asymmetric">
+      <div class="philosophy__lead">
+        <span class="section__number">02</span>
+        <h2 class="section__heading">
+          We believe AI should<br>
+          <em>elevate</em>, not replace,<br>
+          human potential.
+        </h2>
+      </div>
+      <div class="philosophy__body">
+        <div class="philosophy__image">
+          <div class="philosophy__image-inner">
+            <div class="placeholder-image placeholder-image--warm">
+              <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="500" fill="#C9B99A" opacity="0.15"/>
+                <circle cx="200" cy="200" r="80" stroke="#C9B99A" stroke-width="0.5" opacity="0.6"/>
+                <circle cx="200" cy="200" r="120" stroke="#C9B99A" stroke-width="0.5" opacity="0.4"/>
+                <circle cx="200" cy="200" r="160" stroke="#C9B99A" stroke-width="0.5" opacity="0.2"/>
+                <line x1="200" y1="50" x2="200" y2="350" stroke="#C9B99A" stroke-width="0.5" opacity="0.3"/>
+                <line x1="50" y1="200" x2="350" y2="200" stroke="#C9B99A" stroke-width="0.5" opacity="0.3"/>
+              </svg>
+            </div>
+          </div>
+          <div class="philosophy__image-caption">The convergence of human insight and machine intelligence</div>
+        </div>
+        <div class="philosophy__text">
+          <p class="text--large">Aureum was founded on a singular conviction: that artificial intelligence, when wielded with care and conscience, becomes the most powerful tool for human advancement since the printing press.</p>
+          <p>We don't believe in AI for AI's sake. Every solution we craft begins with understanding your unique challenges, your values, and your vision. We then architect intelligent systems that amplify what makes your business distinctly yours.</p>
+          <p>Our name derives from the Latin for "golden" &mdash; a reference to the golden ratio found throughout nature, representing the perfect balance between form and function, between innovation and ethics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Strategy</span>
+      <span class="marquee__dot"></span>
+      <span>Intelligence</span>
+      <span class="marquee__dot"></span>
+      <span>Ethics</span>
+      <span class="marquee__dot"></span>
+      <span>Innovation</span>
+      <span class="marquee__dot"></span>
+      <span>Craft</span>
+      <span class="marquee__dot"></span>
+      <span>Strategy</span>
+      <span class="marquee__dot"></span>
+      <span>Intelligence</span>
+      <span class="marquee__dot"></span>
+      <span>Ethics</span>
+      <span class="marquee__dot"></span>
+      <span>Innovation</span>
+      <span class="marquee__dot"></span>
+      <span>Craft</span>
+      <span class="marquee__dot"></span>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section class="section services" id="services">
+    <div class="section__header">
+      <span class="section__number">03</span>
+      <h2 class="section__heading section__heading--center">Our Expertise</h2>
+      <p class="section__intro">Each engagement is tailored from the ground up.<br>No templates. No shortcuts. Only precision.</p>
+    </div>
+    <div class="services__grid">
+      <article class="service-card">
+        <div class="service-card__number">I</div>
+        <h3 class="service-card__title">AI Strategy<br>& Consulting</h3>
+        <p class="service-card__desc">Comprehensive AI readiness assessments, roadmap development, and strategic planning that aligns intelligent automation with your business objectives.</p>
+        <ul class="service-card__list">
+          <li>AI Readiness Audits</li>
+          <li>Technology Roadmapping</li>
+          <li>ROI Modelling</li>
+          <li>Change Management</li>
+        </ul>
+      </article>
+      <article class="service-card">
+        <div class="service-card__number">II</div>
+        <h3 class="service-card__title">Custom AI<br>Development</h3>
+        <p class="service-card__desc">Purpose-built AI systems designed around your specific workflows, data, and goals. From natural language processing to computer vision and beyond.</p>
+        <ul class="service-card__list">
+          <li>Machine Learning Models</li>
+          <li>Natural Language Processing</li>
+          <li>Computer Vision Systems</li>
+          <li>Predictive Analytics</li>
+        </ul>
+      </article>
+      <article class="service-card">
+        <div class="service-card__number">III</div>
+        <h3 class="service-card__title">Intelligent<br>Automation</h3>
+        <p class="service-card__desc">Streamline operations with AI-powered automation that handles complexity with grace, freeing your team to focus on what truly matters.</p>
+        <ul class="service-card__list">
+          <li>Workflow Automation</li>
+          <li>AI-Powered Chatbots</li>
+          <li>Document Intelligence</li>
+          <li>Process Optimisation</li>
+        </ul>
+      </article>
+      <article class="service-card">
+        <div class="service-card__number">IV</div>
+        <h3 class="service-card__title">Ethical AI<br>Governance</h3>
+        <p class="service-card__desc">Ensuring your AI implementations are transparent, fair, and compliant. We build trust into every algorithm and every decision.</p>
+        <ul class="service-card__list">
+          <li>Bias Auditing</li>
+          <li>Compliance Frameworks</li>
+          <li>Transparency Reports</li>
+          <li>Responsible AI Training</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Full-bleed Statement -->
+  <section class="statement">
+    <div class="statement__inner">
+      <blockquote class="statement__quote">
+        <p>&ldquo;The question is no longer whether to adopt AI, but whether you'll be guided by those who understand its power <em>and</em> its responsibility.&rdquo;</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section process" id="process">
+    <div class="section__header">
+      <span class="section__number">04</span>
+      <h2 class="section__heading section__heading--center">The Aureum Method</h2>
+      <p class="section__intro">A considered approach to transformation.<br>Rigorous in method, refined in execution.</p>
+    </div>
+    <div class="process__timeline">
+      <div class="process__step">
+        <div class="process__step-marker">
+          <span class="process__step-number">01</span>
+          <div class="process__step-line"></div>
+        </div>
+        <div class="process__step-content">
+          <h3>Discovery</h3>
+          <p>We begin with deep listening. Understanding your business, your ambitions, your concerns, and the landscape in which you operate. Every detail matters.</p>
+        </div>
+      </div>
+      <div class="process__step">
+        <div class="process__step-marker">
+          <span class="process__step-number">02</span>
+          <div class="process__step-line"></div>
+        </div>
+        <div class="process__step-content">
+          <h3>Architecture</h3>
+          <p>We design the blueprint &mdash; mapping data flows, selecting models, and engineering solutions that integrate seamlessly with your existing systems.</p>
+        </div>
+      </div>
+      <div class="process__step">
+        <div class="process__step-marker">
+          <span class="process__step-number">03</span>
+          <div class="process__step-line"></div>
+        </div>
+        <div class="process__step-content">
+          <h3>Creation</h3>
+          <p>Our engineers and data scientists bring the vision to life, iterating in close collaboration with your team. Transparency at every stage.</p>
+        </div>
+      </div>
+      <div class="process__step">
+        <div class="process__step-marker">
+          <span class="process__step-number">04</span>
+          <div class="process__step-line"></div>
+        </div>
+        <div class="process__step-content">
+          <h3>Refinement</h3>
+          <p>Rigorous testing, ethical auditing, and performance optimisation ensure your AI solution exceeds expectations before it ever reaches production.</p>
+        </div>
+      </div>
+      <div class="process__step">
+        <div class="process__step-marker">
+          <span class="process__step-number">05</span>
+        </div>
+        <div class="process__step-content">
+          <h3>Evolution</h3>
+          <p>AI is not static, and neither are we. Ongoing monitoring, retraining, and enhancement ensure your investment compounds in value over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics -->
+  <section class="metrics">
+    <div class="metrics__inner">
+      <div class="metric">
+        <div class="metric__value">97<span>%</span></div>
+        <div class="metric__label">Client Retention Rate</div>
+      </div>
+      <div class="metric">
+        <div class="metric__value">3.2<span>x</span></div>
+        <div class="metric__label">Average ROI Delivered</div>
+      </div>
+      <div class="metric">
+        <div class="metric__value">40<span>+</span></div>
+        <div class="metric__label">Bespoke Solutions Built</div>
+      </div>
+      <div class="metric">
+        <div class="metric__value">100<span>%</span></div>
+        <div class="metric__label">Ethical AI Commitment</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journal Section -->
+  <section class="section journal" id="journal">
+    <div class="section__header">
+      <span class="section__number">05</span>
+      <h2 class="section__heading section__heading--center">The Journal</h2>
+      <p class="section__intro">Perspectives on intelligence, ethics,<br>and the future of business.</p>
+    </div>
+    <div class="journal__grid">
+      <article class="journal-card journal-card--featured">
+        <div class="journal-card__image">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="500" fill="#1a1a18"/>
+              <rect x="100" y="100" width="600" height="300" stroke="#C9B99A" stroke-width="0.5" opacity="0.2"/>
+              <line x1="400" y1="100" x2="400" y2="400" stroke="#C9B99A" stroke-width="0.5" opacity="0.15"/>
+              <line x1="100" y1="250" x2="700" y2="250" stroke="#C9B99A" stroke-width="0.5" opacity="0.15"/>
+              <circle cx="400" cy="250" r="60" stroke="#C9B99A" stroke-width="0.5" opacity="0.3"/>
+            </svg>
+          </div>
+        </div>
+        <div class="journal-card__content">
+          <span class="journal-card__category">Ethics</span>
+          <h3 class="journal-card__title">The Case for Conscience in Code</h3>
+          <p class="journal-card__excerpt">Why ethical AI isn't just good practice &mdash; it's good business. Exploring the competitive advantage of principled intelligence.</p>
+          <span class="journal-card__date">January 2025</span>
+        </div>
+      </article>
+      <article class="journal-card">
+        <div class="journal-card__content">
+          <span class="journal-card__category">Strategy</span>
+          <h3 class="journal-card__title">Beyond Automation: AI as a Creative Partner</h3>
+          <p class="journal-card__excerpt">How forward-thinking leaders are using AI not to cut costs, but to unlock entirely new dimensions of value.</p>
+          <span class="journal-card__date">December 2024</span>
+        </div>
+      </article>
+      <article class="journal-card">
+        <div class="journal-card__content">
+          <span class="journal-card__category">Insight</span>
+          <h3 class="journal-card__title">The Small Business AI Advantage</h3>
+          <p class="journal-card__excerpt">Why agile businesses are uniquely positioned to harness AI in ways that larger corporations cannot.</p>
+          <span class="journal-card__date">November 2024</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="contact__grid">
+      <div class="contact__lead">
+        <span class="section__number">06</span>
+        <h2 class="section__heading">
+          Let's create<br>
+          something<br>
+          <em>extraordinary.</em>
+        </h2>
+        <p class="contact__text">Every transformative partnership begins with a conversation. Tell us about your vision, and we'll show you how intelligent technology can bring it to life.</p>
+      </div>
+      <div class="contact__form-wrapper">
+        <form class="contact__form" id="contactForm">
+          <div class="form__group">
+            <label for="name" class="form__label">Name</label>
+            <input type="text" id="name" name="name" class="form__input" required>
+          </div>
+          <div class="form__group">
+            <label for="email" class="form__label">Email</label>
+            <input type="email" id="email" name="email" class="form__input" required>
+          </div>
+          <div class="form__group">
+            <label for="company" class="form__label">Company</label>
+            <input type="text" id="company" name="company" class="form__input">
+          </div>
+          <div class="form__group">
+            <label for="message" class="form__label">Tell us about your vision</label>
+            <textarea id="message" name="message" class="form__input form__textarea" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="form__submit">
+            <span>Send Enquiry</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">Aureum</div>
+          <p class="footer__tagline">Bespoke AI solutions for<br>forward-thinking business owners.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Agency</h4>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#journal">Journal</a>
+          </div>
+          <div class="footer__col">
+            <h4>Connect</h4>
+            <a href="#contact">Contact</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+          </div>
+          <div class="footer__col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Aureum. All rights reserved.</p>
+        <p>Crafted with intelligence and intention.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
