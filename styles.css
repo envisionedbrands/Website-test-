@@ -122,6 +122,8 @@ h1, h2, h3, h4 {
   font-weight: 500;
   letter-spacing: 0.08em;
   color: var(--color-text);
+  position: relative;
+  z-index: 1001;
 }
 
 .nav__links {
@@ -179,36 +181,41 @@ h1, h2, h3, h4 {
   background: none;
   border: none;
   cursor: pointer;
-  width: 32px;
-  height: 24px;
+  width: 44px;
+  height: 44px;
   position: relative;
   z-index: 1001;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav__toggle span {
   display: block;
-  width: 100%;
+  width: 24px;
   height: 1.5px;
   background: var(--color-text);
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav__toggle span:first-child {
-  top: 6px;
+  top: 16px;
 }
 
 .nav__toggle span:last-child {
-  bottom: 6px;
+  bottom: 16px;
 }
 
 .nav__toggle.active span:first-child {
-  transform: translateY(5px) rotate(45deg);
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
 
 .nav__toggle.active span:last-child {
-  transform: translateY(-5px) rotate(-45deg);
+  bottom: auto;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
 }
 
 /* ---------- Hero ---------- */
@@ -255,7 +262,7 @@ h1, h2, h3, h4 {
 }
 
 .hero__title {
-  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-size: clamp(2.5rem, 8vw, 8rem);
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -943,7 +950,7 @@ h1, h2, h3, h4 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--space-md);
+    gap: var(--space-lg);
     z-index: 999;
   }
 
@@ -952,11 +959,29 @@ h1, h2, h3, h4 {
   }
 
   .nav__links a {
-    font-size: 1rem;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav__links a::after {
+    display: none;
+  }
+
+  .nav__links .nav__cta {
+    margin-top: var(--space-sm);
+    padding: 1rem 2.5rem !important;
+    font-size: 0.85rem;
   }
 
   .nav__toggle {
     display: block;
+    width: 40px;
+    height: 40px;
+    padding: 8px 4px;
+  }
+
+  .hero__subtitle br {
+    display: none;
   }
 
   .philosophy__body {
@@ -982,6 +1007,14 @@ h1, h2, h3, h4 {
   .hero__aside {
     display: none;
   }
+
+  .section__intro br {
+    display: none;
+  }
+
+  .statement {
+    padding: var(--space-xl) var(--space-md);
+  }
 }
 
 @media (max-width: 600px) {
@@ -1004,19 +1037,49 @@ h1, h2, h3, h4 {
   .hero {
     padding-left: var(--space-sm);
     padding-right: var(--space-sm);
+    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(100dvh - var(--nav-height));
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .section__heading {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .section__heading br {
+    display: none;
   }
 
   .services__grid {
     grid-template-columns: 1fr;
   }
 
+  .service-card {
+    padding: var(--space-md) var(--space-sm);
+  }
+
   .journal__grid {
     grid-template-columns: 1fr;
+  }
+
+  .journal-card--featured .journal-card__title {
+    font-size: 1.5rem;
   }
 
   .metrics__inner {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
+  }
+
+  .metrics {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .footer {
+    padding: var(--space-lg) var(--space-sm) var(--space-sm);
   }
 
   .footer__links {
@@ -1032,5 +1095,26 @@ h1, h2, h3, h4 {
   .process__step {
     grid-template-columns: 50px 1fr;
     gap: var(--space-sm);
+  }
+
+  .process__step-content h3 {
+    font-size: 1.35rem;
+  }
+
+  .statement__quote p {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .contact__text {
+    max-width: 100%;
+  }
+
+  .form__submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .marquee {
+    padding: var(--space-md) 0;
   }
 }
