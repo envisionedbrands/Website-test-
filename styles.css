@@ -239,8 +239,10 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(201, 185, 154, 0.15) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(201, 185, 154, 0.08) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(201, 185, 154, 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(201, 185, 154, 0.1) 0%, transparent 60%),
+    linear-gradient(to bottom, var(--color-bg) 0%, rgba(245, 242, 237, 0.85) 50%, var(--color-bg) 100%);
+  z-index: 1;
 }
 
 .hero__content {
@@ -427,18 +429,25 @@ h1, h2, h3, h4 {
   line-height: 1.8;
 }
 
-/* Placeholder images */
-.placeholder-image {
+/* Image handling */
+.philosophy__image-inner img,
+.journal-card__image img {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
 }
 
-.placeholder-image svg {
+.hero__bg-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  opacity: 0.12;
+}
+
+.journal-card__image--small {
+  aspect-ratio: 3 / 2;
 }
 
 /* ---------- Marquee ---------- */
