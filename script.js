@@ -1,89 +1,55 @@
-/* ==========================================================================
-   Aureum — JavaScript
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- Navigation scroll effect ---------- */
+  /* ---------- Nav scroll ---------- */
   const nav = document.getElementById('nav');
-  let lastScrollY = 0;
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+  }, { passive: true });
 
-  const handleNavScroll = () => {
-    const scrollY = window.scrollY;
-    if (scrollY > 50) {
-      nav.classList.add('nav--scrolled');
-    } else {
-      nav.classList.remove('nav--scrolled');
-    }
-    lastScrollY = scrollY;
-  };
+  /* ---------- Mobile nav ---------- */
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
 
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
-
-  /* ---------- Mobile navigation toggle ---------- */
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    links.classList.toggle('active');
+    document.body.style.overflow = links.classList.contains('active') ? 'hidden' : '';
   });
 
-  // Close mobile nav when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('active');
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      links.classList.remove('active');
       document.body.style.overflow = '';
     });
   });
 
-  /* ---------- Smooth scroll for anchor links ---------- */
+  /* ---------- Smooth scroll ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
+    anchor.addEventListener('click', e => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height'));
-        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
-        window.scrollTo({ top, behavior: 'smooth' });
+        const offset = 80;
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - offset,
+          behavior: 'smooth'
+        });
       }
     });
   });
 
-  /* ---------- Scroll reveal animations ---------- */
-  const revealElements = () => {
-    const reveals = [
-      '.philosophy__lead',
-      '.philosophy__image',
-      '.philosophy__text',
-      '.service-card',
-      '.process__step',
-      '.metric',
-      '.journal-card',
-      '.contact__lead',
-      '.contact__form-wrapper',
-      '.section__header',
-      '.statement__inner'
-    ];
+  /* ---------- Scroll reveals ---------- */
+  const revealSelectors = [
+    '.about__col-left', '.about__col-right',
+    '.service', '.approach__text', '.approach__image',
+    '.stat', '.post', '.contact__text', '.contact__form',
+    '.services__header', '.journal__header', '.image-break'
+  ];
 
-    reveals.forEach(selector => {
-      document.querySelectorAll(selector).forEach(el => {
-        if (!el.classList.contains('reveal')) {
-          el.classList.add('reveal');
-        }
-      });
-    });
-  };
-
-  revealElements();
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -80px 0px',
-    threshold: 0.1
-  };
+  revealSelectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => el.classList.add('reveal'));
+  });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -92,19 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
 
-  document.querySelectorAll('.reveal').forEach(el => {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* ---------- Staggered reveal for grid items ---------- */
+  /* ---------- Staggered grid reveals ---------- */
   const staggerObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const children = entry.target.querySelectorAll('.reveal');
-        children.forEach((child, i) => {
-          child.style.transitionDelay = `${i * 0.1}s`;
+        entry.target.querySelectorAll('.reveal').forEach((child, i) => {
+          child.style.transitionDelay = `${i * 0.12}s`;
           child.classList.add('reveal--visible');
         });
         staggerObserver.unobserve(entry.target);
@@ -112,38 +75,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.services__grid, .metrics__inner, .journal__grid').forEach(grid => {
+  document.querySelectorAll('.services__grid, .stats__inner, .journal__grid').forEach(grid => {
     staggerObserver.observe(grid);
   });
 
-  /* ---------- Contact form ---------- */
+  /* ---------- Form ---------- */
   const form = document.getElementById('contactForm');
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
-
-    const btn = form.querySelector('.form__submit');
-    const originalText = btn.innerHTML;
-
-    btn.innerHTML = '<span>Message Sent</span>';
-    btn.style.background = 'var(--color-accent-dark)';
-    btn.style.borderColor = 'var(--color-accent-dark)';
-    btn.style.color = 'var(--color-dark)';
-    btn.disabled = true;
-
+    const btn = form.querySelector('.btn');
+    btn.textContent = 'Sent! We\'ll be in touch.';
+    btn.style.background = 'var(--gold)';
+    btn.style.borderColor = 'var(--gold)';
+    btn.style.color = 'white';
     setTimeout(() => {
-      btn.innerHTML = originalText;
+      btn.textContent = 'Send Enquiry →';
       btn.style.background = '';
       btn.style.borderColor = '';
       btn.style.color = '';
-      btn.disabled = false;
       form.reset();
     }, 3000);
   });
-
-  /* ---------- Current year in footer ---------- */
-  const yearEl = document.querySelector('.footer__bottom p:first-child');
-  if (yearEl) {
-    const currentYear = new Date().getFullYear();
-    yearEl.textContent = `\u00A9 ${currentYear} Aureum. All rights reserved.`;
-  }
 });
